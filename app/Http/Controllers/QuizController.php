@@ -49,11 +49,15 @@ class QuizController extends Controller
             ->where('quiz_id', 1)
             ->update(['score' => $score]);
 
-            User::find($user_id)->update([
-                'has_passed' => 1
-            ]);
+        $record = Record::where('user_id', $user_id)
+                    ->where('quiz_id', 1)
+                    ->first();
+
+        User::find($user_id)->update([
+            'has_passed' => 1
+        ]);
 
         // Redirect to the view where the user views their score then logout
-        return view('quiz.completion', compact('score'));
+        return view('quiz.completion', compact('record'));
     }
 }

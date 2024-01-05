@@ -20,10 +20,13 @@
             <h4 class="alert-heading">Well done
                 <span class="text-success">{{ Auth::user()->name }}</span>!
             </h4>
-            <p>You've completed the quiz successfully!</p>
+            <p>You've completed the quiz 
+                <strong class="text-success">{{ $record->quiz->title }}</strong> successfully at 
+                <strong class="text-success">{{ $record->completion_time }}</strong>, BRAVO!
+            </p>
             <hr>
             <strong class="grade">Your grade is
-                <span class="text-{{ $score >= 50 ? 'success' : 'danger' }}">{{ $score }}%</span>
+                <span class="text-{{ $record->score >= 50 ? 'success' : 'danger' }}">{{ $record->score }}%</span>
             </strong><br>   
         </div>
 
