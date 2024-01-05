@@ -15,7 +15,14 @@
 
 <body>
     <section class="container-fluid p-4">
-        <img id="logo" class="w-50" src="{{ asset('img/logo-emsi.png') }}" alt="EMSI Logo">        
+        <img id="logo" class="w-50" src="{{ asset('img/logo-emsi.png') }}" alt="EMSI Logo">
+        @if (session()->has('error'))
+            <div class="alert alert-danger" role="alert" style="margin-top: 30px">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                Error, {{ session('error') }}
+            </div>
+        @endif
+
         <h1 class="text-success">LOGIN</h1><br>
         <form method="POST" action="{{ route('login') }}">
             @csrf

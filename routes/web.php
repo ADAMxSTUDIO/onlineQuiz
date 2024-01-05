@@ -19,5 +19,7 @@ Route::get('/', [AuthController::class, 'showLoginForm']);
 Route::post('/', [AuthController::class, 'Login'])->name('login');
 Route::get('/logout', [AuthController::class, 'Logout'])->name('logout');
 
-Route::get('/quiz', [QuizController::class, 'index'])->middleware('auth')->name('quiz.sheet');
-Route::post('/quiz/completed', [QuizController::class, 'submit'])->name('quiz.completion');
+Route::middleware(['auth', 'preventPassed'])->group(function () {
+    Route::get('/quiz', [QuizController::class, 'index'])->name('quiz.sheet');
+    Route::post('/quiz/completed', [QuizController::class, 'submit'])->name('quiz.completion');
+});
