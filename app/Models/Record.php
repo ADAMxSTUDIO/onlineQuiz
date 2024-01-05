@@ -12,7 +12,8 @@ class Record extends Model
     use HasFactory;
 
     protected $fillable = ['quiz_id', 'user_id', 'score', 'completion_time'];
-    protected $primaryKey = ['quiz_id', 'user_id'];
+    protected $primaryKey = ['user_id', 'quiz_id'];
+    public $incrementing = false; // Here were the problem :(
 
     public function quiz()
     {

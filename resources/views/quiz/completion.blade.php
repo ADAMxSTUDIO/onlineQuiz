@@ -20,7 +20,7 @@
             <h4 class="alert-heading">Well done
                 <span class="text-success">{{ Auth::user()->name }}</span>!
             </h4>
-            <p>You've completed the quiz successfully.</p>
+            <p>You've completed the quiz successfully!</p>
             <hr>
             <strong class="grade">Your grade is
                 <span class="text-{{ $score >= 50 ? 'success' : 'danger' }}">{{ $score }}%</span>

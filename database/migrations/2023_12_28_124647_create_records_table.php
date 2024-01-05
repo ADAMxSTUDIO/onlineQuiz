@@ -12,7 +12,7 @@ class CreateRecordsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('quiz_id');
             $table->primary(['user_id', 'quiz_id']);
-            $table->float('score')->default(0); // ->check('score <= 100')
+            $table->float('score')->default(0)->check('score <= 100');
             $table->dateTime('completion_time')->default(now());
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('quiz_id')->references('id')->on('quizzes');
