@@ -17,7 +17,7 @@ class PreventLoginIfPassed
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::check() && Auth::user()->has_passed) {
-            return redirect('/')->with('error', 'You cannot log in because you have already passed the quiz!');
+            return redirect('/')->with('hasPassed', 'You cannot log in because you have already passed the quiz!');
         }
 
         return $next($request);

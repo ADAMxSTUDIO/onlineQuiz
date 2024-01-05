@@ -16,10 +16,15 @@
 <body>
     <section class="container-fluid p-4">
         <img id="logo" class="w-50" src="{{ asset('img/logo-emsi.png') }}" alt="EMSI Logo">
-        @if (session()->has('error'))
+        @if (session()->has('hasPassed'))
             <div class="alert alert-danger" role="alert" style="margin-top: 30px">
                 <i class="fa-solid fa-circle-exclamation"></i>
-                Error, {{ session('error') }}
+                Error, {{ session('hasPassed') }}
+            </div>
+        @elseif(session()->has('submitted'))
+            <div class="alert alert-success" role="alert" style="margin-top: 30px">
+                <i class="fa-solid fa-circle-check"></i>
+                {{ session('submitted') }}
             </div>
         @endif
 

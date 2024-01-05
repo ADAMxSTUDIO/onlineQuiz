@@ -40,6 +40,6 @@ class AuthController extends Controller
         Session::flush();
         Auth::logout();
 
-        return redirect()->intended('/')->with(['logout' => 'Logged out successfully!']);
+        return redirect()->intended('/')->with(['submitted' => 'Your quiz is submitted successfully, bravo!']);
     }
 }

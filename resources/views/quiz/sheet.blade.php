@@ -71,7 +71,7 @@
                             </div>
                         @endforeach
 
-                        <input type="submit" value="SUBMIT IT NOW!" class="btn btn-success w-100">
+                        <input type="submit" value="Submit" class="btn btn-success w-100">
                     </form>
                 </section>
             </div>
