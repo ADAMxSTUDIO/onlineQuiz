@@ -1,0 +1,7 @@
+This project is specifically tailored to facilitate the administration and completion of a single online quiz. 
+It features two separate spaces: one dedicated to students and the other for administrators/professors, each offering unique functionalities.
+
+The administrator's role primarily involves managing existing quizzes, questions, and answers. They have the capability to modify and organize quizzes as needed. 
+However, the creation of new quizzes is not supported, as this project is intended for a single-time quiz.
+
+Conversely, students utilize the platform to actively participate in the quiz, submit their answers, and subsequently view their results or grades upon completing the quiz.
