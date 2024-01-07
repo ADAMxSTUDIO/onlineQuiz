@@ -11,7 +11,7 @@ body {
         45deg,
         #a4dcbe 0%,
         rgb(220, 255, 159) 100%
-    ) !important;
+    );
 }
 section.container-fluid {
     background-color: #fff;

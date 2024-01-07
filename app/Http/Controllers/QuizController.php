@@ -44,14 +44,12 @@ class QuizController extends Controller
         $score = round($correctAnswerCounter * 100 / $totalAnswers);
         $user_id = Auth::id();
 
-        // Update the record into the database
-        Record::where('user_id', $user_id)
-            ->where('quiz_id', 1)
-            ->update(['score' => $score]);
-
-        $record = Record::where('user_id', $user_id)
-                    ->where('quiz_id', 1)
-                    ->first();
+        // Create the record for the completed quiz
+        $record = new Record;
+        $record->user_id = $user_id;
+        $record->quiz_id = 1;
+        $record->score = $score;
+        $record->save();
 
         User::find($user_id)->update([
             'has_passed' => 1

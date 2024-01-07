@@ -1,0 +1,25 @@
+body {
+    height: 100vh;
+    background-image: linear-gradient(
+        45deg,
+        #f5fffa 0%,
+        rgb(245, 255, 224) 100%
+    );
+}
+
+h1 {
+    font-weight: 700;
+}
+
+section.container {
+    width: 800px;
+    padding: 50px 10px 10px 10px;
+    border: 1px solid rgb(213, 255, 200);
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px rgb(225, 225, 225);
+    background: #fff;
+}
+
+input[type="submit"] {
+    font-weight: 700;
+}

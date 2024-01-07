@@ -14,7 +14,7 @@ class CreateQuestionsTable extends Migration
             $table->integer('grade');
             $table->integer('correct_answers');
             $table->unsignedBigInteger('quiz_id')->default(1);
-            $table->foreign('quiz_id')->references('id')->on('quizzes');
+            $table->foreign('quiz_id')->references('id')->on('quizzes')->cascadeOnDelete();
             $table->timestamps();
         });
     }

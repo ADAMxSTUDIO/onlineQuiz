@@ -3,7 +3,8 @@ CREATE TABLE User (
     name VARCHAR(255),
     email VARCHAR(255),
     password VARCHAR(255),
-    has_passed BOOLEAN
+    is_admin BOOLEAN DEFAULT 0,
+    has_passed BOOLEAN DEFAULT 0
 );
 
 CREATE TABLE Quiz (

@@ -10,7 +10,6 @@ use Database\Seeders\UserSeeder;
 use Database\Seeders\QuizSeeder;
 use Database\Seeders\QuestionSeeder;
 use Database\Seeders\AnswerSeeder;
-use Database\Seeders\RecordSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,6 +29,5 @@ class DatabaseSeeder extends Seeder
         $this->call(QuizSeeder::class);
         $this->call(QuestionSeeder::class);
         $this->call(AnswerSeeder::class);
-        $this->call(RecordSeeder::class);
     }
 }

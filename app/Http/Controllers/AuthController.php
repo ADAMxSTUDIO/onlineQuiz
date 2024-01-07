@@ -26,7 +26,13 @@ class AuthController extends Controller
         $credentials = $request->validated();
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended(route('quiz.sheet'));
+            if (Auth::user()->is_admin) {
+                // Redirect admin to admin dashboard
+                return redirect()->intended(route('admin.index'));
+            } else {
+                // Redirect regular user to user dashboard or specific route
+                return redirect()->intended(route('quiz.sheet'));
+            }
         } else {
             return back()->withErrors(['email' => 'The provided credentials do not match our records.'])->withInput($request->only('email'));
         }
@@ -37,9 +43,15 @@ class AuthController extends Controller
      */
     public function Logout()
     {
+        // To prevent admin from logging out and losing access to is_admin field
+        $id_admin = Auth::user()->is_admin;
         Session::flush();
         Auth::logout();
 
-        return redirect()->intended('/')->with(['submitted' => 'Your quiz is submitted successfully, BRAVO!']);
+        if ($id_admin) {
+            return redirect()->intended('/')->with(['submitted' => 'Logged out successfully!']);
+        } else {
+            return redirect()->intended('/')->with(['submitted' => 'Your quiz is submitted successfully, BRAVO!']);
+        }
     }
 }

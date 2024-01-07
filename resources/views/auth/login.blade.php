@@ -26,6 +26,11 @@
                 <i class="fa-solid fa-circle-check"></i>
                 {{ session('submitted') }}
             </div>
+        @elseif (session()->has('isAdmin'))
+            <div class="alert alert-danger" role="alert" style="margin-top: 30px">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                Error, {{ session('isAdmin') }}
+            </div>
         @endif
 
         <h1 class="text-success">LOGIN</h1><br>
@@ -61,7 +66,8 @@
                 @enderror
 
             </div>
-            <strong id="emailHelp" class="form-text text-success">!important: All fields with * are required</strong>
+            <strong id="emailHelp" class="form-text text-success">!important: All fields with * are
+                required</strong>
             <input name="submit" type="submit" class="btn btn-success w-100 mt-4" value="Login" />
         </form>
     </section>

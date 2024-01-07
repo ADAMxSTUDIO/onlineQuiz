@@ -1,0 +1,12 @@
+section#admin-panel {
+    gap: 10px;
+}
+
+section#admin-panel>div, section#admin-panel>a {
+    height: 40px;
+}
+
+section#admin-panel>div {
+    margin: 0;
+    gap: 10px;
+}

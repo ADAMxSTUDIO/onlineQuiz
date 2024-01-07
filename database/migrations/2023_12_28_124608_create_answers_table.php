@@ -13,7 +13,7 @@ class CreateAnswersTable extends Migration
             $table->text('content');
             $table->boolean('is_correct');
             $table->unsignedBigInteger('question_id');
-            $table->foreign('question_id')->references('id')->on('questions');
+            $table->foreign('question_id')->references('id')->on('questions')->cascadeOnDelete();
             $table->timestamps();
         });
     }
